@@ -113,8 +113,8 @@ bool setWallpaper(const std::string& imagename) {
     // Use Windows API function
     if (!SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, (void*)wallpaperPath.c_str(), SPIF_UPDATEINIFILE | SPIF_SENDCHANGE)) {
         DWORD error = GetLastError();
-        ErrorMessage(L"Failed to set wallpaper. . Error code: " + std::to_wstring(error));
-        std::cerr << "Failed to set wallpaper. . Error code: " << error << "\n";
+        ErrorMessage(L"Failed to set wallpaper. Error code: " + std::to_wstring(error));
+        std::cerr << "Failed to set wallpaper. Error code: " << error << "\n";
         
         if (error == ERROR_FILE_NOT_FOUND) {
             std::cerr << "The specified file was not found.\n";
